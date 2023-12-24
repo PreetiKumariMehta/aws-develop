@@ -13,7 +13,7 @@ export class AwsDevelopStack extends cdk.Stack {
 
   const democicdpipeline = new CodePipeline(this, 'demoCICDPipeline', {
      synth:new ShellStep('Synth', {
-      input: CodePipelineSource.gitHub('PreetiKumariMehta/aws-develop', 'main'),
+      input: CodePipelineSource.gitHub('PreetiKumariMehta/aws-develop', 'master'),
       commands: ['npm ci','npm run build', 'npx cdk synth']
      })
   });
